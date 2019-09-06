@@ -1,0 +1,203 @@
+#title {
+    font-size: 2.5rem;
+    margin: 1rem 0rem 3rem 0rem;
+    color: var(--naver-color);
+    text-align: center;
+}
+
+#form-signup > ul {
+    margin: 3rem 0rem 0rem 0rem;
+    padding: 0rem;
+    list-style-type: none;
+}
+
+#form-signup .label-signup {
+    font-weight: bolder;
+    display: block;
+    margin: 1rem 0rem 1rem 0rem;
+}
+
+#form-signup .label-signup[for="input-tos"] {
+    display: inline-block;
+}
+
+#form-signup .input {
+    height: 3rem;
+}
+
+#form-signup .input:focus {
+    outline-color: var(--naver-color);
+}
+
+#form-signup li > .input {
+    width: 100%;
+}
+
+#form-signup #input-tos {
+    width: 1rem;
+    height: 1rem;
+    padding: 0rem;
+}
+
+#form-signup .birth {
+    text-align: justify;
+    margin-top: 1rem;
+    height: 3rem;
+}
+
+#form-signup .label-signup > * {
+    font-weight: normal;
+}
+
+#form-signup .birth::after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+}
+
+#form-signup .birth > * {
+    width: calc(33.3% - 1rem);
+}
+
+#form-signup .submit {
+    text-align: justify;
+}
+
+#form-signup .submit::after {
+    content: '';
+    width: 100%;
+    display: inline-block;
+}
+
+#form-signup .submit > * {
+    width: calc(50% - 1rem);
+    height: 4rem;
+}
+
+.tos-container {
+    vertical-align: center;
+    font-weight: bolder;
+    margin: 1rem 0rem 1rem 0rem;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.btn {
+    color: #FFF;
+    font-size: 1.5rem;
+    box-shadow: none;
+    border: 0rem;
+    background-color: var(--naver-color);
+}
+
+.result {
+    margin: 0rem;
+}
+
+.success {
+    color: #29B226;
+}
+
+.fail {
+    color: #FE2222;
+}
+
+.description-open {
+    cursor: pointer;
+}
+
+.description-container {
+    margin: 2.5rem;
+    width: 35rem;
+    padding: 1rem;
+    border: 1px solid gray;
+}
+
+.description-container .description-close {
+    display: block;
+    text-align: right;
+    cursor: pointer;
+}
+
+.description-container > h3 {
+    margin-top: 0rem;
+}
+
+.description-container .description {
+    width: 100%;
+    height: 10rem;
+    display: block;
+    margin: 1rem 0rem;
+}
+
+.description-container .btn {
+    font-size: 1rem;
+    display: block;
+    margin: 0 auto;
+    width: 9rem;
+    height: 3rem;
+}
+
+.none {
+    display: none;
+}
+
+.modal.none {
+    display: none;
+}
+
+
+.modal {
+    z-index: 100;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-message {
+    width: 20rem;
+    height: 10rem;
+    background-color: antiquewhite;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid lightgray;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid lightgray;
+    background-color: white;
+}
+
+.tags input {
+    margin: 0rem 0.5rem;
+    padding: 0rem;
+    border: 0px;
+}
+
+.tags input:focus {
+    outline: none;
+}
+
+.tags .tag {
+    margin: 0.4rem;
+    padding: 0.4rem;
+    background-color: #EFEFEF;
+    border: 2px solid lightgray;
+    border-radius: 1rem;
+}
+
+.tags .close {
+    margin: 0.1rem;
+    border: 2px solid lightgray;
+    border-radius: 1rem;
+    content: 'X';
+}

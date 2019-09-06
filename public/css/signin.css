@@ -1,0 +1,22 @@
+.title {
+    text-align: center;
+    margin: 5rem;
+}
+
+.form-input {
+    outline-color: var(--naver-color) !important;
+    height: 3rem;
+    margin: 1rem 0rem;
+}
+
+.btn {
+    height: 3rem;
+    margin: 1rem 0rem;
+    width: 100%;
+    font-size: 2rem;
+}
+
+.toSignup {
+    display: block;
+    text-align: right;
+}

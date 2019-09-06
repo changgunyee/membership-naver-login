@@ -1,0 +1,43 @@
+:root {
+    --naver-color: #08A600;
+}
+
+body {
+    background-color: #F5F6F7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body, form {
+    margin: 0;
+}
+
+input {
+    padding: 1rem;
+    height: 3rem;
+    border: 1px solid lightgray;
+}
+
+select {
+    padding: 0rem 1rem;
+    border: 1px solid lightgray;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #bcbcbc;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label {
+    background-color: #000;
+}

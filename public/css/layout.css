@@ -1,0 +1,9 @@
+#l-container {
+    margin: 0 auto;
+    width: 40rem;
+}
+
+#l-header, #l-footer {
+    text-align: center;
+    font-size: 0.5rem;
+}
