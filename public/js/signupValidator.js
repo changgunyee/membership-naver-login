@@ -20,8 +20,8 @@ const signupValidator = {
             return v.CHECK_RESULT.ID.FAIL
         }
 
-        const duplicateCheck = await this.checkIdDuplicate();
-        if (duplicateCheck) {
+        const avaiable = await this.checkIdAvailable();
+        if (!avaiable) {
             return v.CHECK_RESULT.ID.DUPLICATE_FAIL;
         }
         return v.CHECK_RESULT.ID.SUCCESS;
@@ -79,11 +79,11 @@ const signupValidator = {
             return acc;
         }, {})
     },
-    async checkIdDuplicate() {
+    async checkIdAvailable() {
         const data = await getData("/signup", {
             id: `${this.id}`
         });
-        return data.result;
+        return data;
     }
 }
 

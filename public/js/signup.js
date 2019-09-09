@@ -15,24 +15,24 @@ const Render = {
     setSignUpBtn() {
         $('#btn-submit').addEventListener('click', async (e) => {
             e.preventDefault();
-            const checkResult = signupValidator.CHECK_LIST.some(async (check) => {
+            // const checkResult = await signupValidator.CHECK_LIST.some(async function (check) {
+            for (let check of signupValidator.CHECK_LIST) {
                 const inputId = listToCamelCaseStr(check.split('_'));
                 const validationFuncStr = "check" + inputId.charAt(0).toUpperCase() + inputId.slice(1);
                 if (!signupValidator.hasOwnProperty(validationFuncStr)) {
-                    return false;
+                    continue;
                 }
 
                 const validationResult = await this.checkInputValid(inputId);
                 if (validationResult === false || validationResult !== Validation.CHECK_RESULT[check].SUCCESS) {
                     this.showModal(check, validationResult);
-                    return true;
+                    return this;
                 }
-            })
-            if (!checkResult) {
-                const result = await postData("/signup", signupValidator.getMapData());
-                if (result) {
-                    window.href = "#main"
-                }
+            }
+
+            const result = await postData("/signup", signupValidator.getMapData());
+            if (result) {
+                window.location.href = `${window.location.origin}/#signin`
             }
         })
     },

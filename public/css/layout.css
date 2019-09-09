@@ -3,7 +3,12 @@
     width: 40rem;
 }
 
-#l-header, #l-footer {
+#l-footer {
     text-align: center;
-    font-size: 0.5rem;
+    font-size: 1rem;
+}
+
+#l-header {
+    text-align: end;
+    font-size: 1rem;
 }

@@ -1,4 +1,4 @@
-import {$, addClass, removeClass, Validation as v} from "./utils.js";
+import {$, addClass, postData, removeClass, Validation as v} from "./utils.js";
 
 const Render = {
     init() {
@@ -18,6 +18,8 @@ const Render = {
                 this.showModal("password", "비밀번호를 입력해주세요");
                 return this;
             }
+
+            this.login(id, password);
         })
     },
     showModal(check, result) {
@@ -27,6 +29,12 @@ const Render = {
         setTimeout(() => {
             removeClass(modalElement, "active");
         }, 2000);
+    },
+    async login(id, password) {
+        const response = await postData("/login", {id: id, password: password});
+        if (response) {
+            window.location.href = `${window.location.origin}/#main`
+        }
     }
 }
 

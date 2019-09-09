@@ -1,38 +1,35 @@
-const {executeSignupSqls} = require("./sqls");
+const {executeUserSqls} = require("./sqls");
 
 const express = require('express');
 const router = express.Router();
 const path = require('path');
 
-router.post('/', async (req, res) => {
-    try {
-        const result = await executeSignupSqls.addUser(req);
-        if (!result) {
-            throw new Error("ID이미 존재");
-        }
-        res.json({
-            result: true,
-            name: result
-        })
-    } catch (e) {
-        res.json({
-            result: false,
-            name: null
-        })
-    }
-});
+router.post('/', signup);
 
-router.get('/', async (req, res) => {
+router.get('/', checkIdAvailable);
+
+async function signup(req, res) {
     try {
-        const result = await executeSignupSqls.checkIdExists(req);
-        res.json({
-            result: result
-        })
+        const {id, password, name, birth, gender, email, phoneNumber, interest, tos} = req.body;
+        const available = await executeUserSqls.checkIdAvailable(id);
+        if (!available) {
+            return res.json(null);
+        }
+
+        const response = await executeUserSqls.addUser(id, password, name, birth, gender, email, phoneNumber, interest, tos);
+        return res.json(response);
     } catch (e) {
-        res.json({
-            result: true
-        })
+        return res.json(null);
     }
-})
+}
+
+async function checkIdAvailable(req, res) {
+    try {
+        const response = await executeUserSqls.checkIdAvailable(req.query.id);
+        return res.json(response);
+    } catch (e) {
+        return res.json(null)
+    }
+}
 
 module.exports = router;

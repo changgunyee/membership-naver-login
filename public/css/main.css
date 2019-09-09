@@ -1,0 +1,10 @@
+.none {
+    display: none;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin: 1rem 0rem 3rem 0rem;
+    color: var(--naver-color);
+    text-align: center;
+}

@@ -51,7 +51,7 @@ import {$, $$} from "./utils.js";
             get('../html/main.html');
         },
         otherwise() {
-            get('../html/signin.html');
+            get('../html/main.html');
         }
     };
 
